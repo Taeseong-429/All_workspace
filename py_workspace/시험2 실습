@@ -1,0 +1,46 @@
+# 1
+CREATE TABLE department (
+    deptno NUMBER CONSTRAINT department_deptno_pk PRIMARY KEY ,
+    dname VARCHAR2 ,
+    loc VARCHAR 2
+);
+
+
+
+
+# 2
+INSERT ALL
+INTO myemp_hire VALUES (empno,ename,hiredate,sal)
+INTO myemp_mgr VALUES (empno, ename, mgr)
+SELECTE empno, ename, hiredate, sal, mgr
+FROM emp ;
+
+# 3
+
+COMMIT
+ROLLBACK
+SAVEPOINT
+
+# 4
+
+USER_CONSTRAINTS
+
+# 5
+
+CREATE INDEX emp_ename_idx ON EMP( ename ) ;
+
+# 6
+
+CREATE VIEW emp_view AS
+ SELECT 
+ FROM
+ ON
+ WHERE
+
+# 7 
+
+SELECT last_name, salary
+FROM employees
+WHERE salary = (SELECT MAX (salary)
+                FROM employees
+                WHERE department_id = 100) ;

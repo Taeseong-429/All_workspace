@@ -1,0 +1,12 @@
+# temp.py
+
+name = 'Yoseph'
+
+def tempFunc():
+    print('- temp::tempFunc() invoked')
+    pass
+
+lambdaFunc = lambda : '- temp::lambdaFunc'
+
+print('My name is temp.py')
+

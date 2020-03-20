@@ -1,0 +1,17 @@
+--트랜잭션 T1
+--REPEATABLE READ 모드
+--오라클 실습을 위해 변경
+--SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+-- step 1
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+SELECT SUM(price) 총액
+FROM   Book;
+
+--step 3
+SELECT SUM(price) 총액
+FROM   Book;
+
+/* 앞의 결과와 다름 */
+
+COMMIT;

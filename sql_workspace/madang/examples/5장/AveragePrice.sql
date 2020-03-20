@@ -1,0 +1,6 @@
+CREATE OR REPLACE PROCEDURE AveragePrice(
+  AverageVal OUT NUMBER)
+AS
+BEGIN
+  SELECT AVG(price) INTO AverageVal FROM Book WHERE price IS NOT NULL;
+END;

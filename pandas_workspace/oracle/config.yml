@@ -1,0 +1,8 @@
+database:
+    username: "SCOTT"
+    password: "TIGER"
+    sysdba: "n"
+    host: (DESCRIPTION =
+            (ADDRESS = (PROTOCOL = TCP)(HOST = vfx5)(PORT = 1521))
+            (CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = pdbacorn.localdomain))
+          )

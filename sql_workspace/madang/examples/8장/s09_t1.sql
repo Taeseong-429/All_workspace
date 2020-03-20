@@ -1,0 +1,19 @@
+-- T1(읽는 트랜잭션)
+-- REPEATABLE READ 모드
+-- 오라클 제공하지 않음
+-- step 1 
+-- 오라클에서 실습을 위해 임시 수정
+-- SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+SELECT * 
+FROM   Users
+WHERE age BETWEEN 10 AND 30;
+
+-- step 3
+SELECT * 
+FROM   Users
+WHERE age BETWEEN 10 AND 30;
+
+COMMIT;
+

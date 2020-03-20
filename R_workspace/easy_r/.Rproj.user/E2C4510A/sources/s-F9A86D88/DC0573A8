@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1584685745435.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "DC0573A8",
+    "lastKnownWriteTime" : 1584691280,
+    "last_content_update" : 1584691280405,
+    "path" : "C:/app/all_workspace/R_workspace/easy_r/고급분석스크립트/DecisionTree-1 (의사결정나무).R",
+    "project_path" : "고급분석스크립트/DecisionTree-1 (의사결정나무).R",
+    "properties" : {
+        "cursorPosition" : "44,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

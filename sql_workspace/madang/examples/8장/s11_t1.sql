@@ -1,0 +1,16 @@
+-- 트랜잭션 T1
+-- REPEATABLE READ 모드
+
+SET TRANSACTION ISOLATION LEVEL REPEATABLE READ;
+
+SELECT SUM(price) 총액
+FROM   Book;
+
+
+SELECT SUM(price) 총액
+FROM   Book;
+/* 앞의 결과와 같음 */
+
+
+COMMIT;
+

@@ -1,0 +1,182 @@
+
+------------------------------------------------------------------
+0. Intial Situation
+------------------------------------------------------------------
+    a. There is no pip in /usr/bin/
+    b. There is no pip in /usr/local/bin/
+
+        trinity@ubuntu:~$ ll /usr/bin/pip*
+        ls: cannot access '/usr/bin/pip*': No such file or directory
+        trinity@ubuntu:~$ ll /usr/local/bin/pip*
+        ls: cannot access '/usr/local/bin/pip*': No such file or directory
+        trinity@ubuntu:~$
+
+    c. There are some python directories in /usr/lib
+
+        /usr/lib/python3    : No.   
+        /usr/lib/python3.6  : Many files --> (Current Python3 Version)
+        /usr/lib/python3.7  : No.   --> if install Python3.7, full fill many files.
+        /usr/lib/python3.8  : No.   --> if install Python3.8, full fill many files.
+
+
+------------------------------------------------------------------
+1. Install of pip
+------------------------------------------------------------------
+
+    a. Install pip3
+    
+        $ sudo apt install -y python3-pip
+
+        $ ll /usr/bin/pip*
+        -rwxr-xr-x 1 root root 293  4월  3  2019 /usr/bin/pip3*
+        
+        $ pip3 -V
+        pip 9.0.1 from /usr/lib/python3/dist-packages (python 3.6)
+
+
+    b. Upgrade pip3 v9.0.1 to v19.3.1
+
+        $ sudo pip3 install --upgrade pip
+        Installing collected packages: pip
+        Found existing installation: pip 9.0.1
+            Not uninstalling pip at /usr/lib/python3/dist-packages, outside environment /usr
+        Successfully installed pip-19.3.1
+
+        $ pip3 -V
+        Traceback (most recent call last):
+        File "/usr/bin/pip3", line 9, in <module>
+            from pip import main
+        ImportError: cannot import name 'main'  <- *********************
+
+    c. Delete pip3 package  <- *********************
+
+        $ sudo apt remove python3-pip
+
+        $ pip3
+        bash: /usr/bin/pip3: No such file or directory
+
+        $ ll /usr/bin/pip*
+        ls: cannot access '/usr/bin/pip*': No such file or directory
+
+        $ which pip
+        /usr/local/bin/pip
+
+        $ cd /usr/local/bin
+
+        trinity@ubuntu:/usr/local/bin$ ll
+        ...
+        -rwxr-xr-x  1 root root  221  1월 18 19:38 pip*
+        -rwxr-xr-x  1 root root  221  1월 18 19:38 pip3*
+        -rwxr-xr-x  1 root root  221  1월 18 19:38 pip3.6*
+
+    d. After settings,
+
+        trinity@ubuntu:/usr/local/bin$ pip -V
+        pip 19.3.1 from /usr/local/lib/python3.6/dist-packages/pip (python 3.6)
+        trinity@ubuntu:/usr/local/bin$ pip3 -V
+        pip 19.3.1 from /usr/local/lib/python3.6/dist-packages/pip (python 3.6)
+        trinity@ubuntu:/usr/local/bin$ pip3.6 -V
+        pip 19.3.1 from /usr/local/lib/python3.6/dist-packages/pip (python 3.6)
+
+
+
+------------------------------------------------------------------
+2. Install of Jupyterlab
+------------------------------------------------------------------
+
+    $ sudo pip install jupyterlab
+
+        [trinity@ubuntu /usr/local/bin]$ ll
+        total 132
+        drwxr-xr-x  2 root root 4096 Jan 18 18:27 ./
+        drwxr-xr-x 10 root root 4096 Aug  6 03:58 ../
+        -rwxr-xr-x  1 root root 6583 Dec 16 02:01 coraenv*
+        -rwxr-xr-x  1 root root 2445 Dec 16 02:01 dbhome*
+        -rwxr-xr-x  1 root root  231 Jan 18 18:27 iptest*
+        -rwxr-xr-x  1 root root  231 Jan 18 18:27 iptest3*
+        -rwxr-xr-x  1 root root  224 Jan 18 18:27 ipython*
+        -rwxr-xr-x  1 root root  224 Jan 18 18:27 ipython3*
+        -rwxr-xr-x  1 root root  217 Jan 18 18:27 jlpm*
+        -rwxr-xr-x  1 root root  213 Jan 18 18:27 jsonschema*
+        -rwxr-xr-x  1 root root  219 Jan 18 18:27 jupyter*
+        -rwxr-xr-x  1 root root  233 Jan 18 18:27 jupyter-bundlerextension*
+        -rwxr-xr-x  1 root root  223 Jan 18 18:27 jupyter-kernel*
+        -rwxr-xr-x  1 root root  261 Jan 18 18:27 jupyter-kernelspec*
+        -rwxr-xr-x  1 root root  216 Jan 18 18:27 jupyter-lab*
+        -rwxr-xr-x  1 root root  223 Jan 18 18:27 jupyter-labextension*
+        -rwxr-xr-x  1 root root  219 Jan 18 18:27 jupyter-labhub*
+        -rwxr-xr-x  1 root root  219 Jan 18 18:27 jupyter-migrate*
+        -rwxr-xr-x  1 root root  221 Jan 18 18:27 jupyter-nbconvert*
+        -rwxr-xr-x  1 root root  220 Jan 18 18:27 jupyter-nbextension*
+        -rwxr-xr-x  1 root root  219 Jan 18 18:27 jupyter-notebook*
+        -rwxr-xr-x  1 root root  240 Jan 18 18:27 jupyter-run*
+        -rwxr-xr-x  1 root root  224 Jan 18 18:27 jupyter-serverextension*
+        -rwxr-xr-x  1 root root  224 Jan 18 18:27 jupyter-troubleshoot*
+        -rwxr-xr-x  1 root root  252 Jan 18 18:27 jupyter-trust*
+        -rwxr-xr-x  1 root root 7003 Dec 16 02:01 oraenv*
+        -rwxr-xr-x  1 root root  217 Jan 18 17:41 pip*
+        -rwxr-xr-x  1 root root  217 Jan 18 17:41 pip3*
+        -rwxr-xr-x  1 root root  217 Jan 18 17:41 pip3.7*
+        -rwxr-xr-x  1 root root  215 Jan 18 18:27 pygmentize*
+        -rwxr-xr-x  1 root root  209 Jan 18 18:27 pyjson5*
+
+
+------------------------------------------------------------------
+3. Execute Jupyterlab
+------------------------------------------------------------------
+
+    $ jupyter
+    usage: jupyter [-h] [--version] [--config-dir] [--data-dir] [--runtime-dir]
+                [--paths] [--json]
+                [subcommand]
+    jupyter: error: one of the arguments --version subcommand --config-dir --data-dir --runtime-dir --paths is required
+
+
+    $ jupyter-lab
+    [I 18:44:45.291 LabApp] JupyterLab extension loaded from /usr/local/lib/python3.6/dist-packages/jupyterlab
+    [I 18:44:45.291 LabApp] JupyterLab application directory is /usr/local/share/jupyter/lab
+    [I 18:44:45.293 LabApp] Serving notebooks from local directory: /usr/local/bin
+    [I 18:44:45.293 LabApp] The Jupyter Notebook is running at:
+    [I 18:44:45.293 LabApp] http://localhost:8888/?token=74b9c0179b0d9b34cfc30b43c7d6192dfa4429b6564133d6
+    [I 18:44:45.293 LabApp]  or http://127.0.0.1:8888/?token=74b9c0179b0d9b34cfc30b43c7d6192dfa4429b6564133d6
+    [I 18:44:45.293 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+    [C 18:44:45.299 LabApp] 
+        
+        To access the notebook, open this file in a browser:
+            file:///home/trinity/.local/share/jupyter/runtime/nbserver-22462-open.html
+        Or copy and paste one of these URLs:
+            http://localhost:8888/?token=74b9c0179b0d9b34cfc30b43c7d6192dfa4429b6564133d6
+        or http://127.0.0.1:8888/?token=74b9c0179b0d9b34cfc30b43c7d6192dfa4429b6564133d6
+    [W 18:44:47.987 LabApp] Could not determine jupyterlab build status without nodejs
+
+
+    $ jupyter lab
+
+    $ python3 jupyter lab
+
+
+------------------------------------------------------------------
+4. Execute Jupyter notebook
+------------------------------------------------------------------
+
+    $ jupyter-notebook 
+    [I 18:51:58.925 NotebookApp] JupyterLab extension loaded from /usr/local/lib/python3.6/dist-packages/jupyterlab
+    [I 18:51:58.925 NotebookApp] JupyterLab application directory is /usr/local/share/jupyter/lab
+    [I 18:51:58.927 NotebookApp] Serving notebooks from local directory: /usr/local/bin
+    [I 18:51:58.927 NotebookApp] The Jupyter Notebook is running at:
+    [I 18:51:58.927 NotebookApp] http://localhost:8888/?token=dc15cc82f44d57a91f53c672544f844c3f081d81bfb663c9
+    [I 18:51:58.927 NotebookApp]  or http://127.0.0.1:8888/?token=dc15cc82f44d57a91f53c672544f844c3f081d81bfb663c9
+    [I 18:51:58.927 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+    [C 18:51:58.930 NotebookApp] 
+        
+        To access the notebook, open this file in a browser:
+            file:///home/trinity/.local/share/jupyter/runtime/nbserver-23124-open.html
+        Or copy and paste one of these URLs:
+            http://localhost:8888/?token=dc15cc82f44d57a91f53c672544f844c3f081d81bfb663c9
+        or http://127.0.0.1:8888/?token=dc15cc82f44d57a91f53c672544f844c3f081d81bfb663c9
+
+    
+    $ jupyter notebook
+
+    $ python3 jupyter notebook
+

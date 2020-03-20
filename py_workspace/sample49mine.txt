@@ -1,0 +1,38 @@
+# sample49.py
+
+# How to use runtime arguments
+
+# import sys
+
+# print(type(sys))
+# print(id(sys))
+# print(dir(sys))
+# print(sys)
+
+#------------------------------------------#
+
+# import temp
+
+# print('- name:', temp.name)
+
+# temp.tempFunc()
+
+# temp.labdaFunc()
+# print('- result:', 'temp.lambdaFunc')
+# print('My name is sample49.py')
+
+#------------------------------------------#
+
+import sys
+
+
+print(type(sys.argv))
+print(id(sys.argv))
+print((sys.argv))
+
+print('- sample49.py')
+print('-'*50)
+
+for arg in sys.argv:
+    print('-arg: ',arg)
+    pass

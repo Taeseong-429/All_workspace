@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1584691744938.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1687973243",
+    "id" : "C5D586BB",
+    "lastKnownWriteTime" : 1584668212,
+    "last_content_update" : 1584668212,
+    "path" : "C:/app/all_workspace/R_workspace/easy_r/고급분석스크립트/Classification-1.R",
+    "project_path" : "고급분석스크립트/Classification-1.R",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

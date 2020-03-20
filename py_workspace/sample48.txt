@@ -1,0 +1,103 @@
+# sample48.py
+
+# f = open('data.txt','r', encoding='utf8')
+
+# # 파일의 내용 전체를 읽어서, 문자열로 변환
+# file = f.read()
+# print('1:',file)
+
+# # 두번째 읽기 --- 실패: 왜? 원인은 , EOF(End-Of-File)
+# f.seek(0)
+# file = f.read()
+
+# print('2:',file)
+
+# f.close()
+
+#----------------------------------------------#
+
+# f = open('새파일.txt','w')
+
+# for i in range(1,11):
+#     data = '%d번째 줄입니다 \n' %i
+#     f.write(data)
+#     pass
+
+# f.close()
+
+#----------------------------------------------#
+
+# f = open('data.txt','r', encoding='utf8')
+
+# # line = f.readline()
+# # line = f.readline()
+# # line = f.readline()
+# # line = f.readline()
+# # line = f.readline() # 5행 읽기
+
+# while True:
+#     line = f.readline()
+#     print(line)
+#     # if(line ==''):  #EOF
+#     if not line:      #EOF
+#         break
+#         pass
+#     pass
+    
+# f.close()
+
+# -------------------------------------------#
+
+# f = open('data.txt','r', encoding='utf8')
+
+# while True:
+#     inputData = input('입력하세요:')
+#     print(type(inputData))
+
+#     if not inputData:
+#         break
+#         pass
+#     pass
+
+# f.close()
+
+#-------------------------------------------#
+
+# f = open('data.txt','r', encoding='utf8')
+
+# lines = f.readlines()
+
+# print(type(lines))
+# # print(lines)
+
+# for line in lines:
+#     print(line.replace('\n',''))
+#     pass
+
+# f.close()
+
+#-------------------------------------------#
+
+# f = open('data.txt','a', encoding='utf8')
+
+# f.write('\n')
+# f.write('Append-5')
+# f.write('\n')
+# f.write('Append-6')
+
+# f.close()
+
+#-------------------------------------------#
+# 적극 권장 with : 열려진(사용한) 자원을 파이썬 인터프리터가
+#                  책임지고 닫아주기 때문에(블록 내에서 오류가)
+#                  발생하든 안하든), 적극적으로 사용
+
+with open('data.txt','a', encoding='utf8') as f:
+    
+    f.write('\n')
+    f.write('Append-7')
+    f.write('\n')
+    f.write('Append-8')
+    
+    pass
+

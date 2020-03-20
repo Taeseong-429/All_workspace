@@ -1,0 +1,14 @@
+--T1(읽는 트랜잭션)
+--READ COMMITTED 모드
+--step1 
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+SELECT * 
+FROM   Users
+WHERE  id=1;
+
+--step 3
+SELECT * 
+FROM   Users
+WHERE  id=1;
+

@@ -1,0 +1,16 @@
+--T2(쓰는 트랜잭션)
+--READ COMMITTED 모드
+--step 2
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
+
+UPDATE Users 
+SET     age=21
+WHERE  id=1;
+
+COMMIT;
+
+SELECT * 
+FROM   Users
+WHERE  id=1;
+
+
